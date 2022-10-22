@@ -19,11 +19,12 @@ body{
     flex-flow: row wrap;
     text-align: center;
     justify-content: center;
-    background-color: #e0f7e0;
+    background-color: #12666d;
 }
 #encabezado >h1{
     padding-top: 1em;
     padding-bottom: 1em;
+    color: white;
 }
 
 #barraNavegacion{
@@ -55,6 +56,37 @@ body{
     padding-bottom: 1em;
     
 }
+#contenedorContacto{
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+    width: 500px;
+    background-color: #17a590;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.Formulario{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+.Formulario>label{
+    margin-right: 1em;
+}
+.Formulario>input{
+    height: 2.5em;
+    width: 100%;
+}
+.FormularioBotones>button{
+    font-size: 20px;
+    background-color: #126d52;
+    cursor: pointer;
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+.FormularioBotones>button:hover{
+    background-color: #004939;
+}
 .descripcion{
     margin: 0;
 }
@@ -72,6 +104,9 @@ body{
     height: 250px;
     margin: 0.5em;
 }
+.ProductoCont{
+    background-color: #007e85;
+}
 a{
     padding: .5em;
     font-size: 1.4em;
@@ -80,7 +115,7 @@ a{
     text-decoration: none;
 }
 a:hover{
-    background-color: blue;
+    background-color: #007994;
     color: black;
 }
 
@@ -92,6 +127,14 @@ a:hover{
     .AcercaDe >img{
         width: 250px;
         height: 250px;
+    }
+    #contenedorContacto{
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+    }
+    a{
+        border-bottom: 2.5px solid black;
     }
 }
 

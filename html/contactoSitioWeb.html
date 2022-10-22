@@ -19,8 +19,43 @@
         <a href="/html/contactoSitioWeb.html">Contacto</a>
     </nav>
     
-    <div id="contenedor">
-
+    <div id="contenedorContacto">
+        <form action="2020030200@upsin.edu.mx" method="get">
+            <div class="Formulario">
+                <label for="">Nombre(s)</label>
+                <input type="text" placeholder="Captura tu(s) nombre(s)" required> 
+            </div>
+            <div class="Formulario">
+                <label for="">Apellido(s)</label>
+                <input type="text" placeholder="Captura tu(s) apellido(s)" required> 
+            </div>
+            <div class="Formulario">
+                <label for="">Correo</label>
+                <input type="email" placeholder="Captura un correo" required>
+            </div>
+            <div class="Formulario">
+                <label for="">Sexo</label>
+                <div>
+                    <label for="">Masculino</label>
+                    <input type="radio" name="sexo">
+                    <label for="">Femenino</label>
+                    <input type="radio" name="sexo">
+                </div>
+            </div>
+            <div class="Formulario">
+                <label for="">Fecha de nacimiento</label>
+                <input type="date" min="1910-01-01" max="2022-12-31" required>
+            </div>
+            <div class="Formulario">
+                <label for="">Comentarios</label>
+                <br>
+                <textarea name="comentarios" id="Comentario" cols="35" rows="8" placeholder="Escribe tus comentarios" required></textarea>
+            </div>
+            <div class="FormularioBotones">
+                <button type="reset">Limpiar</button>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
     </div>
     
     <footer id="piePagina">
