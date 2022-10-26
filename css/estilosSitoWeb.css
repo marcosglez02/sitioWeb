@@ -64,6 +64,7 @@ body{
     width: 500px;
     background-color: #17a590;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    margin-bottom: 2.4em;
 }
 .Formulario{
     display: flex;
@@ -131,7 +132,10 @@ a:hover{
     #contenedorContacto{
         display: flex;
         flex-direction: column;
-        width: 250px;
+        width: 80%;
+    }
+    textarea{
+        width: 100%;
     }
     a{
         border-bottom: 2.5px solid black;
