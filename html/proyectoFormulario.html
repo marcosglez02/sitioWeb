@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de productos</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap-5.1.3-dist/css/bootstrap.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="/css/FontAwesome/css/all.css">
+    <link rel="stylesheet" href="/css/estilosProyecto.css">
+
+</head>
+
+<body>
+    <h2 id="Encabezado" style="margin-bottom: 0px;">Bienvenido a la página de autenticación</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1 p-4 mt-2 text-dark pt-4 rounded">
+
+                <form action="">
+                    
+                    <div class="form-group row mb-4">
+                        <div class="col-md-6">
+                            <label for="" class="col-form-label">Código del producto</label>
+                            <div class="input-group-text">
+                                <span class="input-group-text">#</span>
+                                <input type="text" name="" id="txtCodigo" placeholder="Introduce el código del producto"
+                                    class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="" class="col-md-6 col-form-label">Precio</label>
+                            <div class="input-group-text">
+                                <span class="input-group-text">$</span>
+                                <input type="number" name="" id="txtPrecio" placeholder="Introduce el precio del producto"
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-4">
+                    
+                            <div class="col-md-6">
+                                <label for="txtEmail" class="col-form-label">Nombre del producto</label>
+                                <input type="text" name="" id="txtNombre" placeholder="Introduce el nombre"
+                                class="form-control">
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label for="" class="col-form-label">Estatus</label>
+                                    <select name="" id="estatus" class="form-select">
+                                    <option value="" selected>Selecciona una opción</option>
+                                    <option value="0">Activo</option>
+                                    <option value="1">Inactivo</option>
+                                </select>
+                            </div>
+                        
+                    </div>
+                    <div class="form-group row mb-4">
+                        <label for="" class="col-md-2 col-form-label">Descripción</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" id="txtDescripcion" rows="2"
+                                placeholder="Introduce una descripción breve" maxlength="125"></textarea>
+                        </div>
+
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label for="" class="col-md-2 col-form-label">Selecciona una imagen</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="file" id="img" accept="image/png,image/jpeg">
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <div class="col-12">
+                            <input class="form-control" type="text" name="url" id="url" readonly
+                            placeholder="URL de la imagen">
+                        </div>
+                        
+                    </div>
+                    <div class="form-group row mb-2 justify-content-center">
+                        <img id="imagenSeleccionada" src="">
+                    </div>
+                    <div class="form-group row mb-3">
+                        <div class="col-md-12" style="text-align: end;">
+                            <button type="reset" class="btn btn-outline-dark m-2 col-md-3"
+                                id="btnLimpiar"><i class="fas fa-trash"></i> limpiar</button>
+                        </div>
+
+                    </div>
+                    <div class="form-group row mb-3">
+                        <h3 class="m-2">Selecciona una acción</h3>
+                        <div class="col-md-12">
+                            <button class="btn btn-success m-2" id="btnInsertar">Insertar</button>
+                            <button class="btn btn-warning m-2" id="btnActualizar">Actualizar</button>
+                            <button class="btn btn-danger m-2" id="btnEliminar">Habilitar/Deshabilitar</button>
+                            <button class="btn btn-info m-2" id="btnMostrar">Mostrar</button>
+                            <button class="btn btn-secondary m-2" id="btnMostrarTodos">Mostrar Todos</button>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+            <h2 class="mt-2" style="text-align: center;">Listado de productos</h2>
+
+        </div>
+    </div>
+    <table id="productos" class="table table-light table-hover table-bordered d-none mt-2 mb-0 caption-top">
+
+    </table>
+
+    <footer id="piePagina" class="mt-4">
+        <p>©2022, Todos los derechos reservados, Marcos Abraham González Páez</p>
+    </footer>
+    <script src="/css/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="/js/proyecto.js" type="module"></script>
+</body>
+
+</html>
