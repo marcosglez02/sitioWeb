@@ -1,0 +1,31 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+#txtDescripcion{
+    resize: none;
+}
+#imagenSeleccionada{
+    max-width: 300px;
+    max-height: 300px;
+    min-width: 10%;
+    min-height: 10%;
+}
+#Encabezado{
+    text-align: center;
+    background-color: #12666d;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    color: white;
+    
+}
+#piePagina{
+    text-align: center;
+    background-color: #45444e;
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
