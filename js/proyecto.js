@@ -3,6 +3,10 @@
   import { getDatabase, onValue, ref, set, child, get, update, remove} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
   import { getStorage,ref as refStorage, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-storage.js";
 
+if (sessionStorage.getItem("isAuth") === null || sessionStorage.getItem("isAuth") !== "true") {
+    window.location.href = "login.html";
+}
+
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 

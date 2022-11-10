@@ -20,6 +20,7 @@ body{
     text-align: center;
     justify-content: center;
     background-color: #12666d;
+    min-height: 150px;
 }
 #encabezado >h1{
     padding-top: 1em;
@@ -33,6 +34,7 @@ body{
     justify-content: space-evenly;
     text-align: center;
     background-color: #6ac5cb;
+    min-height: 50px;
 }
 
 #contenedor{
@@ -41,7 +43,8 @@ body{
     width: 95%;
     max-width: 1600px;
     margin: 0 auto;
-    margin-bottom: 1.5em;
+    margin-bottom: 30PX;
+    min-height: calc(100vh - 330px);
 }
 #piePagina{
     display: flex;
@@ -49,6 +52,7 @@ body{
     justify-content: center;
     text-align: center;
     background-color: #45444e;
+    min-height: 90px;
 }
 #piePagina > p{
     color: white;
@@ -58,13 +62,17 @@ body{
 }
 #contenedorContacto{
     margin: 0 auto;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 30px;
     text-align: center;
     width: 500px;
     background-color: #17a590;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-    margin-bottom: 2.4em;
+    margin-top: 10px;
+    min-height: calc(100vh - 330px);
+}
+
+#contenedorProductos{
+    justify-content: space-between;
 }
 .Formulario{
     display: flex;
@@ -96,7 +104,7 @@ body{
 }
 .productos > div > img{
     width: 95%;
-    height: 250px;
+    max-height: 250px;
     margin: 0.5em;
 }
 .ProductoCont{
@@ -149,6 +157,12 @@ a:hover{
         grid-template-columns: 1fr 1fr;
     }
     
+}
+
+@media (min-width: 800px) {
+    .productos {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 @media (min-width: 1200px) {

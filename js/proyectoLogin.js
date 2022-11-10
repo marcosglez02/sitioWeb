@@ -31,7 +31,8 @@ function iniciarSesion(){
     }
     const auth = getAuth();
     signInWithEmailAndPassword(auth, usuario, contraseña).then((userCredential) => {
-    alert('Bienvenido ' + usuario)
+    alert('Bienvenido ' + usuario);
+    sessionStorage.setItem('isAuth',"true");
     window.location.href = 'proyectoFormulario.html';
     
   })

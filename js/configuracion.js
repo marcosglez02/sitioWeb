@@ -39,7 +39,7 @@ function mostrarProductos(){
             "<img src="+" "+childData.urlImagen+" "+"> " +
             "<h3>"+childData.nombre +"</h3>"+
             "<h3> "+childData.descripcion +"</h3>"+
-            "<h3>$ "+childData.precio +"</h3>"+
+            "<h3>$"+childData.precio +"</h3>"+
             "<a class='button'>Comprar</a>"+
             "</div>";
           }
