@@ -32,9 +32,9 @@ var btnActualizar = document.getElementById("btnActualizar");
 var btnBorrar = document.getElementById("btnEliminar");
 var btnLimpiar = document.getElementById("btnLimpiar");
 var btnTodos = document.getElementById("btnMostrarTodos");
-var lista = document.getElementById("listaAlumnos");
 var archivo = document.getElementById('img');
-var btnMostrarImagen = document.getElementById('verImagen');
+var btnEliminarTabla = document.getElementById('btnEliminarTabla');
+
 
 var codigo = "";
 var precio = "";
@@ -53,6 +53,7 @@ document.getElementById('txtCodigo').value = "";
 document.getElementById('url').value = "";
 document.getElementById('imagenSeleccionada').src =""; 
 document.getElementById('estatus').value="";
+document.getElementById('productos').innerHTML = "";
 }
 
 function leer() {
@@ -143,7 +144,7 @@ function insertarDatos() {
           urlImagen = snapshot.val().urlImagen;
           escribirInputs();
         } else {
-          alert("No existe la matricula");
+          alert("No existe el código");
         }
       })
       .catch((error) => {
@@ -184,7 +185,6 @@ function insertarDatos() {
   function descargarImagen(){
   
     archivo = nombreImagen;
-    alert('Archivo = '+ archivo);
     const storageRef = refStorage(storage, 'imagenes/'+ archivo);
     // Get the download URL
   getDownloadURL(storageRef)
@@ -257,6 +257,10 @@ function mostrarProductos(){
     
   );
 }
+function EliminarTabla(){
+  event.preventDefault();
+  productos.classList.add("d-none");
+}
 
 function escribirInputs(){
   document.getElementById("txtPrecio").value = precio;
@@ -274,6 +278,8 @@ btnMostrar.addEventListener('click', mostrarProducto);
 btnLimpiar.addEventListener('click', limpiar);
 btnBorrar.addEventListener('click', borrar);
 btnActualizar.addEventListener('click',actualizar);
-btnTodos.addEventListener('click', mostrarProductos)
+btnTodos.addEventListener('click', mostrarProductos);
+btnEliminarTabla.addEventListener('click', EliminarTabla);
+
 
 
