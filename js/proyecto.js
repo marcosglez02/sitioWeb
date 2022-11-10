@@ -2,10 +2,10 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
   import { getDatabase, onValue, ref, set, child, get, update, remove} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
   import { getStorage,ref as refStorage, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-storage.js";
-
-if (sessionStorage.getItem("isAuth") === null || sessionStorage.getItem("isAuth") !== "true") {
-    window.location.href = "login.html";
-}
+  import { signOut, getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+// if (sessionStorage.getItem("isAuth") === null || sessionStorage.getItem("isAuth") !== "true") {
+//     window.location.href = "login.html";
+// }
 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,6 +24,7 @@ if (sessionStorage.getItem("isAuth") === null || sessionStorage.getItem("isAuth"
   const app = initializeApp(firebaseConfig);
   const db = getDatabase();
   const storage = getStorage();
+  const auth = getAuth(app);
 
 // Declaración de objetos
 var btnInsertar = document.getElementById("btnInsertar");
@@ -34,6 +35,7 @@ var btnLimpiar = document.getElementById("btnLimpiar");
 var btnTodos = document.getElementById("btnMostrarTodos");
 var archivo = document.getElementById('img');
 var btnEliminarTabla = document.getElementById('btnEliminarTabla');
+var btnCerrarSesion = document.getElementById('btnCerrarSesion');
 
 
 var codigo = "";
@@ -270,7 +272,32 @@ function escribirInputs(){
   document.getElementById('url').value = urlImagen;
   document.getElementById('imagenSeleccionada').src=urlImagen;
   document.getElementById('estatus').value=estatus;
-} 
+}
+
+
+    btnCerrarSesion.addEventListener('click',  (e)=>{
+        signOut(auth).then(() => {
+        alert("SESIÓN CERRADA")
+        window.location.href="login.html";
+        // Sign-out successful.
+        }).catch((error) => {
+        // An error happened.
+        });
+    });
+
+    onAuthStateChanged(auth, async user => {
+      if (user) {
+          if (window.location.pathname.includes("login")) {
+              window.location.href = "/html/proyectoFormulario.html";
+          }
+      } else {
+          if (window.location.pathname.includes("proyectoFormulario")||window.location.pathname.includes("proyectoformulario")) {
+              window.location.href = "/html/login.html";
+          }
+      }
+  });
+
+
 //Listado de eventos
 btnInsertar.addEventListener("click", insertarDatos);
 archivo.addEventListener("change", obtnerUrl);

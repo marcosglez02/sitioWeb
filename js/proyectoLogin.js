@@ -1,6 +1,7 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+  import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -16,8 +17,7 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-
-
+  const auth = getAuth(app);
 
 // Autentificación
 function iniciarSesion(){
@@ -29,7 +29,7 @@ function iniciarSesion(){
       alert('Complete los campos');
       return;
     }
-    const auth = getAuth();
+    
     signInWithEmailAndPassword(auth, usuario, contraseña).then((userCredential) => {
     alert('Bienvenido ' + usuario);
     sessionStorage.setItem('isAuth',"true");
@@ -43,7 +43,18 @@ function iniciarSesion(){
   }
 
   var btnIniciarSesion = document.getElementById('btnInicioSesion');
-
   btnIniciarSesion.addEventListener('click', iniciarSesion);
+
+onAuthStateChanged(auth, async user => {
+    if (user) {
+        if (window.location.pathname.includes("login")) {
+            window.location.href = "/html/proyectoFormulario.html";
+        }
+    } else {
+        if (window.location.pathname.includes("proyectoFormulario")||window.location.pathname.includes("proyectoformulario")) {
+            window.location.href = "/html/login.html";
+        }
+    }
+});
 
   
